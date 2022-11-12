@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia e Noite</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+          
+                    }
+        #check, #icon, #theme {
+            position: absolute;
+            top: 0;
+            left:0;
+            width: 40px;
+            height: 40px;
+           
+           
+
+        }
+        #check {
+            z-index: 2;
+            cursor: pointer;
+            opacity: 0;
+            
+          
+                        
+        }
+        #icon {
+            z-index: 1;
+            background-image: url(./night-svgrepo-com.svg);
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: translate(+10%, +10%);
+            transition: 2s all linear;
+
+        }
+        #theme {
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #theme #color {
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fff;
+            transform: translate(-50%, -50%);
+            transition: 2s all linear;
+        }
+        #main {
+            width: 100%;
+            height: 100%;
+            color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        h1, p {
+        width: 80%;
+        padding: 2px 0;
+
+        }
+        #check:checked ~ #icon{
+            color: #fff;
+            background-image: url(./sun.jpg);
+            background-size: 150%;
+            border-radius: 50%;
+            transform: translate(-40%, -40%);
+            transition: 2s all linear;
+           
+            
+        }
+        #check:checked ~ #theme #color{
+           background-color: #000;
+           width: calc(100vmax * 3);
+           height: calc(100vmax * 3);
+          
+        }
+        #check:checked ~ #main {
+          color:#fff;
+        }
+    </style>
+
+
+</head>
+<body>
+    <input id="check" type="checkbox">
+    <span id="icon"></span>
+    <div id="theme">
+        <span id="color"></span>
+    </div>
+    <article id="main">
+        <h1>Day / Night Mode In HTML</h1>
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptate ipsam velit consequuntur dicta deserunt vero doloribus? Quisquam, vero minima, iste nemo, quas labore porro aspernatur inventore dolore non natus!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptate ipsam velit consequuntur dicta deserunt vero doloribus? Quisquam, vero minima, iste nemo, quas labore porro aspernatur inventore dolore non natus!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptate ipsam velit consequuntur dicta deserunt vero doloribus? Quisquam, vero minima, iste nemo, quas labore porro aspernatur inventore dolore non natus!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptate ipsam velit consequuntur dicta deserunt vero doloribus? Quisquam, vero minima, iste nemo, quas labore porro aspernatur inventore dolore non natus!
+        </P>
+    </article>
+</body>
+</html>
